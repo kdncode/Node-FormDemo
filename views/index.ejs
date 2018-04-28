@@ -6,10 +6,26 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
-    
+    <div class="container">
+
+      <div class="jumbotron text-center">
+        <h3 class="display-4">Here is the product form</h3>
+      </div>
+
+      <form action="" method="post">
+        <div class="form-group">
+            <label for="">My Product</label>
+            <input type="text" class="form-control" name="tdsp" id="" aria-describedby="helpId" placeholder="Product Name">
+            <small id="helpId" class="form-text text-muted">Enter product</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+      </form>
+
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
