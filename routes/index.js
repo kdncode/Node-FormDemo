@@ -13,7 +13,19 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage })
+// Check to allow uploading only image
+function checkFileUpload (req, file, cb) {
+  // The function should call `cb` with a boolean
+  // to indicate if the file should be accepted
+  if (!file.originalname.match(/\.(jpg|png|jpeg)$/)) {
+    cb(new Error('Please upload only image'));
+  } else {
+    cb(null, true)
+  }
+}
+
+var upload = multer({ storage: storage, fileFilter: checkFileUpload })
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
